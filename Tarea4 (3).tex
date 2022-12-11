@@ -1,0 +1,145 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{verbatim}
+var('x')
+k = (x^2 + 2*x - 8) / (x -2)
+limit(k, x = 2)
+\end{verbatim}
+
+\begin{verbatim}
+6
+\end{verbatim}
+
+\begin{verbatim}
+var('x')
+f = sec(x)
+limit(f, x = pi/2, dir = 'plus')
+\end{verbatim}
+
+\begin{verbatim}
+-Infinity
+\end{verbatim}
+
+\begin{verbatim}
+var('x')
+d = sec(x)
+limit(d, x = pi/2, dir = 'minus')
+\end{verbatim}
+
+\begin{verbatim}
++Infinity
+\end{verbatim}
+
+\begin{verbatim}
+var('x')
+h = (x^2) * (e^(3*x)) * (cos(2*x))
+diff(h, x)
+\end{verbatim}
+
+\begin{verbatim}
+3*x^2*cos(2*x)*e^(3*x) - 2*x^2*e^(3*x)*sin(2*x) + 2*x*cos(2*x)*e^(3*x)
+\end{verbatim}
+
+\begin{verbatim}
+var('t')
+j = (t^2 + 1) / (t - 2)
+diff(j, t)
+\end{verbatim}
+
+\begin{verbatim}
+2*t/(t - 2) - (t^2 + 1)/(t - 2)^2
+\end{verbatim}
+
+\begin{verbatim}
+var('x')
+g = x * cos(x)
+diff(g, x)
+\end{verbatim}
+
+\begin{verbatim}
+-x*sin(x) + cos(x)
+\end{verbatim}
+
+\begin{verbatim}
+var('x')
+r = (x + 1) / (x^2 + 2*x + 1)
+integral(r ,x)
+\end{verbatim}
+
+\begin{verbatim}
+1/2*log(x^2 + 2*x + 1)
+\end{verbatim}
+
+\begin{verbatim}
+var('x')
+w = sec(x)
+integral(w, x, -pi/4, pi/4)
+\end{verbatim}
+
+\begin{verbatim}
+log(1/2*sqrt(2) + 1) - log(-1/2*sqrt(2) + 1)
+\end{verbatim}
+
+\begin{verbatim}
+var('x')
+a = x * e^(-x^2)
+integral(a, x)
+\end{verbatim}
+
+\begin{verbatim}
+-1/2*e^(-x^2)
+\end{verbatim}
+
+\begin{verbatim}
+\end{verbatim}
+
+\end{document}
